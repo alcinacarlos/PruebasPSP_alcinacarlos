@@ -3,7 +3,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Character alfredo = new Character("Alfredo", 30, 20);
+        var alfredo = new Character("Alfredo", 100, 20 , 20);
         Console.WriteLine(alfredo.Name);
+        var axe = new Axe("Leviatán", 20);
+        alfredo.AddItem(axe);
+        
     }
 }

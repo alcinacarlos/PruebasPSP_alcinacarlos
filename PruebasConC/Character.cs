@@ -1,21 +1,24 @@
 using PruebasConC;
 
-public class Character()
+public class Character
 {
-    public string Name;
-    public int BaseDamage;
-    public int BaseArmor;
-    public int MaxHitPoints;
-    public int CurrentHit;
-    public int CurrentDamage;
-    public int CurrentArmor;
-    public List<IItem> Inventory;
+    public string Name { get; set; }
+    public int BaseDamage { get; set; }
+    public int BaseArmor { get; set; }
+    public int MaxHitPoints { get; set; }
+    public int CurrentHit { get; set; }
+    public int CurrentDamage { get; set; }
+    public int CurrentArmor { get; set; }
+    public List<IItem> Inventory { get; set; }
 
-    public Character(string Name, int BaseDamage, int BaseArmor)
+    public Character(string name, int maxHitPoints, int baseDamage, int baseArmor)
     {
-        Name = Name;
-        BaseDamage = BaseDamage;
-        BaseArmor = BaseArmor;
+        Name = name;
+        MaxHitPoints = maxHitPoints;
+        CurrentHit = maxHitPoints;
+        BaseDamage = baseDamage;
+        BaseArmor = baseArmor;
+        Inventory = new List<IItem>();
     }
     
     public void Attack(Character character)
@@ -48,4 +51,12 @@ public class Character()
         Console.WriteLine("Daño recibido");
         CurrentHit -= damage;
     }
+
+    public void AddItem(IItem item)
+    {
+        Inventory.Add(item);
+        item.Apply(this);
+        Console.WriteLine("Item añadido");
+    }
+    
 }

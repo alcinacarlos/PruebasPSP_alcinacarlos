@@ -1,6 +1,6 @@
 namespace PruebasConC;
 
-public class Axe(string Name, int Damage) : Weapon(Name, Damage)
+public class Sword(String Name, int Damage) : Weapon(Name,Damage)
 {
     public override void Apply(Character character)
     {
