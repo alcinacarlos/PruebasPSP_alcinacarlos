@@ -1,14 +1,7 @@
+using PruebasConC.Perks;
+
 namespace PruebasConC.Weapons;
 
-public class Sword(string name, int damage) : Weapon(name, damage)
+public class Sword(string name, int damage, List<Perk>? perks = null) : Weapon(name, damage, perks)
 {
-    public override void Apply(Creature creature)
-    {
-        creature.CurrentDamage += Damage;
-    }
-
-    public override void Cancel(Creature creature)
-    {
-        creature.CurrentDamage -= Damage;
-    }
 }

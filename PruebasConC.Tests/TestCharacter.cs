@@ -32,11 +32,11 @@ public class CharacterTests
     public void Character_Heal_ShouldNotExceedMaxHitPoints()
     {
         var character = new Character("Test Character", 10, 5, 50);
-        character.Defense(20); // Reduce HP to 30 (50 - 20)
+        character.Defense(20);
 
         character.Heal(25);
 
-        Assert.Equal(50, character.CurrentHit); // No debe exceder los 50 HP
+        Assert.Equal(50, character.CurrentHit);
     }
     
     [Fact]

@@ -8,7 +8,7 @@ public abstract class Creature
     public int CurrentDamage { get; set; }
     public int CurrentArmor { get; set; }
     public int CurrentHit { get; set; }
-    private int MaxHitPoints { get; set; }
+    public int MaxHitPoints { get; set; }
     
     public abstract int Attack(Creature creature);
     public abstract int Defense(int damage);
