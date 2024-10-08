@@ -1,9 +1,14 @@
-namespace PruebasConC;
+namespace PruebasConC.Weapons;
 
-public class Axe(string Name, int Damage) : Weapon(Name, Damage)
+public class Axe(string name, int damage) : Weapon(name, damage)
 {
-    public override void Apply(Character character)
+    public override void Apply(Creature creature)
     {
-        character.CurrentDamage += Damage;
+        creature.CurrentDamage += Damage;
+    }
+
+    public override void Cancel(Creature creature)
+    {
+        creature.CurrentDamage -= Damage;
     }
 }

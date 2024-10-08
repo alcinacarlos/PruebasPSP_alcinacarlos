@@ -2,5 +2,6 @@ namespace PruebasConC;
 
 public interface IItem
 {
-    void Apply(Character character);
+    void Apply(Creature creature);
+    void Cancel(Creature creature);
 }

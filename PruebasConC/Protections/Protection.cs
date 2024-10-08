@@ -1,4 +1,4 @@
-namespace PruebasConC;
+namespace PruebasConC.Protections;
 
 public abstract class Protection : IItem
 {
@@ -11,5 +11,6 @@ public abstract class Protection : IItem
         Armor = armor;
     }
 
-    public abstract void Apply(Character character);
+    public abstract void Apply(Creature creature);
+    public abstract void Cancel(Creature creature);
 }

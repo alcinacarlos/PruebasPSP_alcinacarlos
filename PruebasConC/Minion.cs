@@ -1,25 +1,7 @@
 using PruebasConC;
 
-public class Character(string name, int baseDamage, int baseArmor, int maxHitPoints): Creature(name, baseDamage, baseArmor,maxHitPoints)
+public class Minion(string name, int baseDamage, int baseArmor, int maxHitPoints): Creature(name, baseDamage, baseArmor, maxHitPoints)
 {
-    private List<Minion> _minions = new List<Minion>();
-    
-    public void SummonMinion(Minion minion)
-    {
-        _minions.Add(minion);
-    }
-    public void RemoveMinion(Minion minion)
-    {
-        _minions.Remove(minion);
-    }
-    public void MinionsAttack(Creature creature)
-    {
-        foreach (var minion in _minions)
-        {
-            minion.Attack(creature);
-        }
-    }
-    
     public override int Attack(Creature creature)
     {
         return creature.Defense(CurrentDamage);

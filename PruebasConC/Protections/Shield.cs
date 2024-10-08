@@ -1,9 +1,14 @@
-namespace PruebasConC;
+namespace PruebasConC.Protections;
 
-public class Shield(string Name, int Armor) : Protection(Name, Armor)
+public class Shield(string name, int armor) : Protection(name, armor)
 {
-    public override void Apply(Character character)
+    public override void Apply(Creature creature)
     {
-        character.CurrentArmor += Armor;
+        creature.CurrentArmor += Armor;
+    }
+
+    public override void Cancel(Creature creature)
+    {
+        creature.CurrentArmor -= Armor;
     }
 }

@@ -11,5 +11,6 @@ public abstract class Weapon : IItem
         Damage = damage;
     }
 
-    public abstract void Apply(Character character);
+    public abstract void Apply(Creature creature);
+    public abstract void Cancel(Creature creature);
 }
