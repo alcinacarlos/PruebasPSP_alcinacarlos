@@ -14,11 +14,11 @@ public abstract class Creature
     public abstract int Defense(int damage);
     public List<IItem> _inventory { get; set; }
 
-    public Creature(string name, int baseArmor, int baseDamage, int maxHitPoints)
+    public Creature(string name, int baseDamage, int baseArmor, int maxHitPoints)
     {
         Name = name;
-        BaseArmor = baseArmor;
         BaseDamage = baseDamage;
+        BaseArmor = baseArmor;
         MaxHitPoints = maxHitPoints;
         CurrentHit = maxHitPoints;
         CurrentDamage = baseDamage;

@@ -15,8 +15,14 @@ class Program
         ignacio.AddItem(minionItem);
         alfredo.AddItem(axe);
         
-        ignacio.MinionsAttack(alfredo);
+        //ignacio.MinionsAttack(alfredo);
         
+        var minion = new Minion("Test Minion", 111, 33, 50);
+        var target = new Character("Target Creature", 111, 33, 50);
+
+        // Act
+        int damageDealt = minion.Attack(target);
+        Console.WriteLine(damageDealt);
         
     }
 }
